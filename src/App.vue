@@ -3,20 +3,48 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/map">MyFootprint</RouterLink>
-        <RouterLink to="/selfie">Selfie</RouterLink>
-      </nav>
-    </div>
-  </header>
-  <RouterView />
+  <div class="common-layout">
+    <el-container>
+      <el-header class="wrapper">
+        <el-row :gutter="20">
+          <el-col :span="4">
+            <div class="grid-content ep-bg-purple">
+              <RouterLink to="/">Home</RouterLink>
+            </div>
+          </el-col>
+          <el-col :span="4">
+            <div class="grid-content ep-bg-purple">
+              <RouterLink to="/about">About</RouterLink>
+            </div>
+          </el-col>
+          <el-col :span="8"
+            ><div class="grid-content ep-bg-purple">
+              <RouterLink to="/map">MyFootprint</RouterLink>
+            </div></el-col
+          >
+          <el-col :span="8"
+            ><div class="grid-content ep-bg-purple">
+              <RouterLink to="/selfie">Selfie</RouterLink>
+            </div></el-col
+          >
+        </el-row>
+      </el-header>
+      <el-main>
+        <RouterView />
+      </el-main>
+    </el-container>
+  </div>
 </template>
 
 <style scoped>
+.el-col {
+  border-radius: 4px;
+}
+
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
